@@ -427,24 +427,24 @@ class ResNet(nn.Cell):
         
 #----------------------------------------------------------------------
 
-    # Build a ResNet-50 network.
-    def resnet50(class_num=5):
-        
-        """
-        Get ResNet50 neural network.
-        Args:
-            class_num (int): Class number.
-        Returns:
-            Cell, cell instance of ResNet50 neural network.
-        Examples:
-            >>> net = resnet50(10)
-        """
-        return ResNet(ResidualBlock, # Residual block
-                [3, 4, 6, 3], # Number of residual blocks
-                [64, 256, 512, 1024], # Input channel
-                [256, 512, 1024, 2048], # Output channel
-                [1, 2, 2, 2], # Step
-                class_num) # Number of output classes
+# Build a ResNet-50 network.
+def resnet50(class_num=5):
+    
+    """
+    Get ResNet50 neural network.
+    Args:
+        class_num (int): Class number.
+    Returns:
+        Cell, cell instance of ResNet50 neural network.
+    Examples:
+        >>> net = resnet50(10)
+    """
+    return ResNet(ResidualBlock, # Residual block
+            [3, 4, 6, 3], # Number of residual blocks
+            [64, 256, 512, 1024], # Input channel
+            [256, 512, 1024, 2048], # Output channel
+            [1, 2, 2, 2], # Step
+            class_num) # Number of output classes
 
 
 
