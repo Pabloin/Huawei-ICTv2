@@ -228,19 +228,19 @@ class ResidualBlock(nn.Cell):
 
 
 
-    def init_(self, in_channel, out_channel, stride=l):
+    def init_(self, in_channel, out_channel, stride=1):
         super(ResidualBlock, self)._init_()
         # The number of convolution kernels at the first two layers is equal to a quarter of the number of
         # convolution kernels at the output channels.
         channel = out_channel // self.expansion
         # Layer 1 convolution
-        self.convl = _convlxl(in_channel, channel, stride=l)
+        self.convl = _convlxl(in_channel, channel, stride=1)
         self.bnl = _bn(channel)
         # Layer 2 convolution
         self.conv2 = _conv3x3(channel, channel, stride=stride)
         self.bn2 = _bn(channel)
         # Layer 3 convolution. The number of convolution kernels is equal to that of output channels.
-        self.conv3 = _convlxl(channel, out_channel, stride=l)
+        self.conv3 = _convlxl(channel, out_channel, stride=1)
         self.bn3 = _bn_last(out_channel)
         # ReLU activation layer
         self.relu = nn.ReLU()
@@ -281,7 +281,7 @@ class ResidualBlock(nn.Cell):
             
             # Change the network dimension.
             if self.down_sample:
-              identity = self.down_sample_layer(identity)
+                identity = self.down_sample_layer(identity)
             
             # Add the residual.
             out = self.add(out, identity)
