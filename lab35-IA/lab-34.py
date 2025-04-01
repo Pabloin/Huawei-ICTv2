@@ -450,6 +450,7 @@ def resnet50(class_num=5):
 
 
 
+
 #----------------------------------------------------------------------
 
 # Construct a ResNet-50 network. The number of output classes is 5, corresponding to five flower classes.
@@ -460,6 +461,7 @@ param_dict = load_checkpoint("model_resnet/resnet50_ascend_v170_imagenet2012_off
 
 # Display the read model parameters.
 print(param_dict)
+
 
 
 
