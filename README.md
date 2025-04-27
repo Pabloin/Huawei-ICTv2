@@ -2,6 +2,7 @@
 Huawei-ICT WIP
 
 
+# AWS-Envs
 EC2
 
 
@@ -12,6 +13,5 @@ wget https://ascend-professional-construction-dataset.obs.myhuaweicloud.com/deep
 wget https://ascend-professional-construction-dataset.obs.myhuaweicloud.com/deep-learning/flower_photos_test.zip
 
 
-
-
 ResNet-50 Image Classlficatlon
+
