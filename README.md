@@ -15,3 +15,7 @@ wget https://ascend-professional-construction-dataset.obs.myhuaweicloud.com/deep
 
 ResNet-50 Image Classlficatlon
 
+
+# IoC
+En WIP
+
